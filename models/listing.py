@@ -13,7 +13,13 @@ class Listing:
         self.location = location
 
     def insert(self):
-        pass
+        with sqlite3.connect(self.dbpath) as conn:
+            cursor = conn.cursor()
+            sql = f"""INSERT INTO {self.tablename} (
+                    name, quantity, price, location
+                    ) VALUES (?,?,?,?);"""
+            values = (self.name, self.quantity, self. price, self.location)
+            cursor.execute(sql, values)
 
     def update(self):
         pass   

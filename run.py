@@ -1,4 +1,5 @@
 import os
+from flask_routes.routes import app
 from models.listing import Listing
 
 PATH = os.path.dirname(__file__)
@@ -6,4 +7,7 @@ PATH = os.path.dirname(__file__)
 Listing.dbpath = os.path.join(PATH, "data", "listings.db")
 
 #empty list in generated
-print(Listing.select_all())
+#print(Listing.select_all())
+
+if __name__ == "__main__":
+    app.run()

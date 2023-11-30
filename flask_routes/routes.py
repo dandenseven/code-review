@@ -23,25 +23,28 @@ def all_items():
     all_items = Listing.select_all()
     return jsonify({"selected": all_items})
 
-@app.route("/list/add", methods=["GET"])
-def add_item():
-    pass
+@app.route("/list/add/<name>/<quantity>/<price>/<location>", methods=["GET"])
+def add_item(name, quantity, price,location):
+    # use our Listing class add an item to the DB
+    # can use a POST request if desired
+    return jsonify({})
 
 @app.route("/list/update", methods=["GET"])
 def update_item():
     pass
 
-@app.route("list/delete", methods=["GET"])
+@app.route("/list/delete", methods=["GET"])
 def delete_item():
     pass
 
-@app.route("list/select_one/<id>", methods=["GET"])
+@app.route("/list/select_one/<id>", methods=["GET"])
 def name(id):
     pass
 
-@app.route("list/slect_one/<id>", methods=["GET"])
+#example for serving an HTML document
+@app.route("/html_example", methods=["GET"])
 def html_example():
-    pass
+    return flask.render_template("filename.html")
 
 
 

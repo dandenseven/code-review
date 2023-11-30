@@ -2,13 +2,13 @@ import sqlite3
 import os
 
 PATH = os.path.dirname(__file__)
-DATAPATH = os.path.join(PATH,"listings.db")
+DATAPATH = os.path.join(PATH, "listings.db")
 #print(DATAPATH)
 
 def schema(dbpath=DATAPATH):
     # with calls an object's __enter__ method
-    # then calls the object's __exit__ method upon 
-    # exiting the with's block of code OR encountering an exception
+    # then calls the object's __exit__method upon
+    #exiting the with's blovk of code OR encountering an exception
     with sqlite3.connect(dbpath) as conn:
         cursor = conn.cursor()
         sql = """CREATE TABLE IF NOT EXISTS listings(
@@ -19,7 +19,6 @@ def schema(dbpath=DATAPATH):
             location VARCHAR
         );"""
         cursor.execute(sql)
-
 
 
 

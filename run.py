@@ -1,6 +1,6 @@
 import os
-from flask_routes.routes import app
-from models.listing import Listing
+from flask_routes import app
+from models import Listing
 
 
 PATH = os.path.dirname(__file__)

@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from models.listing import Listing
+from models import Listing
 # Client-side code would SEND a request
 # This is server-side code. It's designed to RECEIVE requests
 

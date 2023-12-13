@@ -10,7 +10,6 @@ def schema():
         cursor.execute(sql)
 
 
-
 if __name__ == "__main__":
     schema()
 

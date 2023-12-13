@@ -1,15 +1,14 @@
 from flask import Flask, request, jsonify
-import sqlite3
+from models import Students
 
 app = Flask(__name__)
 
 @app.route("/insert/<name>", methods=["GET"])
 def add_student(name):
-    with sqlite3.connect("example.db") as conn:
-        cursor = conn.cursor()
-        sql = """INSERT INTO students (name) VALUES {?}"""
-        cursor.execute(sql, (name,))
+    new = Students(name, None)
+    new.insert()
     return jsonify({"Success": True})
+
 
 
 
